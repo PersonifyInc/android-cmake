@@ -1035,11 +1035,7 @@ if( BUILD_WITH_ANDROID_NDK )
   set( ANDROID_RTTI             ON )
   set( ANDROID_CXX_ROOT     "${ANDROID_NDK}/sources/cxx-stl/" )
   set( ANDROID_LLVM_ROOT    "${ANDROID_CXX_ROOT}/llvm-libc++" )
-  if( X86 )
-   set( ANDROID_ABI_INCLUDE_DIRS "${ANDROID_CXX_ROOT}/gabi++/include" )
-  else()
-   set( ANDROID_ABI_INCLUDE_DIRS "${ANDROID_CXX_ROOT}/llvm-libc++abi/libcxxabi/include" )
-  endif()
+  set( ANDROID_ABI_INCLUDE_DIRS "${ANDROID_CXX_ROOT}/llvm-libc++abi/libcxxabi/include" )
   set( ANDROID_STL_INCLUDE_DIRS     "${ANDROID_LLVM_ROOT}/libcxx/include"
                                     "${ANDROID_ABI_INCLUDE_DIRS}" )
   # android support sfiles
